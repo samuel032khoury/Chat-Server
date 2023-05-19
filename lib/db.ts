@@ -1,4 +1,3 @@
-import assert from "assert";
 import { Redis } from "@upstash/redis";
 
 const url = process.env.UPSTASH_REDIS_REST_URL || "";
