@@ -43,6 +43,7 @@ export async function POST(req: Request) {
     }
     // valid request, send friend request
     await db.sadd(`user:${uid}:incoming_friend_requests`, sessionUID);
+    await db.sadd(`user:${sessionUID}:friend_requests_history`, uid);
     return new Response("OK");
   } catch (error) {
     if (error instanceof z.ZodError) {
