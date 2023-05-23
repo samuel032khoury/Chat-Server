@@ -33,7 +33,7 @@ const FriendRequestsSidebarOption: FC<FriendRequestsSidebarOptionProps> = ({
       >
         <User className={"h-4 w-4"} />
       </div>
-      <p className={"truncate"}>Friend requests</p>
+      <p className={"truncate"}>Friends requests</p>
       {unseenRequestCount > 0 ? (
         <div
           className={
