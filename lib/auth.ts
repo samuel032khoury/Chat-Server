@@ -46,8 +46,8 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
     redirect: async (): Promise<string> => {
-      return '/dashboard'
-    }
+      return "/dashboard";
+    },
   },
   pages: {
     signIn: "/login",
@@ -56,6 +56,11 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId,
       clientSecret,
+      authorization: {
+        params: {
+          prompt: "consent",
+        },
+      },
     }),
   ],
   session: {

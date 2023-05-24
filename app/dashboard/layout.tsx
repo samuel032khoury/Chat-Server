@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { getServerSession, Session } from "next-auth";
+import { getServerSession, Session, User } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -8,6 +8,7 @@ import Image from "next/image";
 import SignOutButton from "@/components/SignOutButton";
 import FriendRequestsSidebarOption from "@/components/FriendRequestsSidebarOption";
 import { db } from "@/lib/db";
+import SidebarChatList from "@/components/SidebarChatList";
 
 interface LayoutProps {
   children: ReactNode;
@@ -24,27 +25,38 @@ const staticSidebarOptions: SidebarOption[] = [
   { id: 1, name: "Add friends", href: "/dashboard/add", icon: "UserPlus" },
 ];
 
+const getFriendsByUserId = async (id: UID) => {
+  const friendsIds = (await db.smembers(`user:${id}:friends`)) as string[];
+  return await Promise.all(
+    friendsIds.map(
+      async (friendId) => (await db.get(`user:${friendId}`)) as User
+    )
+  );
+};
 const DashboardLayout = async ({ children }: LayoutProps) => {
   const session: Session | null = await getServerSession(authOptions);
-  const unseenRequestCount: number = (
-    await db.smembers(`user:${session?.user.id}:incoming_friend_requests`)
-  ).length;
   if (!session) notFound();
+  const unseenRequestCount: number = (
+    await db.smembers(`user:${session.user.id}:incoming_friend_requests`)
+  ).length;
+  const friends = await getFriendsByUserId(session.user.id);
   return (
-    <div id={"container"} className={"w-full flex h-screen"}>
+    <div id={"container"} className={"w-full flex h-screen dark:bg-[#121517]"}>
       <div
         id={"sidebar"}
         className={
           "flex flex-1 flex-col h-full max-w-[22rem] grow gap-y-5 overflow-y-auto overflow-x-clip " +
-          "border-r border-gray-200 bg-white px-6"
+          "border-r border-gray-200 bg-white px-6 dark:bg-[#1b2023] dark:border-neutral-600"
         }
       >
         <Link
-          id={"home-btn"}
+          id={"logo"}
           href={"/dashboard"}
           className={"flex h-16 shrink-0 items-center"}
         >
-          <Icons.Logo className={"h-8 w-auto text-indigo-600"} />
+          <Icons.Logo
+            className={"h-8 w-auto text-indigo-600 dark:text-indigo-50"}
+          />
         </Link>
         <div
           id={"scrollable-section"}
@@ -61,7 +73,7 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
               <ul
                 id={"sidebar-option-list"}
                 role={"list"}
-                className={"-mx-2 space-y-2"}
+                className={"-px-2 space-y-2"}
               >
                 <FriendRequestsSidebarOption
                   sessionId={session.user.id}
@@ -71,20 +83,8 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
                   const Icon = Icons[option.icon];
                   return (
                     <li key={option.id}>
-                      <Link
-                        href={option.href}
-                        className={
-                          "group flex text-sm text-gray-700 gap-3 p-2 leading-6 font-semibold " +
-                          "rounded-md hover:text-indigo-600 hover:bg-gray-50"
-                        }
-                      >
-                        <span
-                          className={
-                            "flex h-6 w-6 shrink-0 items-center justify-center rounded-lg " +
-                            "text-[0.625rem] font-medium text-gray-400 border-gray-200 border " +
-                            "group-hover:border-indigo-600 group-hover:text-indigo-600"
-                          }
-                        >
+                      <Link href={option.href} className={"group sidebar-item"}>
+                        <span className={"sidebar-icon"}>
                           <Icon className={"h-4 w-4"} />
                         </span>
                         <span className={"truncate"}>{option.name}</span>
@@ -95,23 +95,23 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
               </ul>
             </nav>
           </div>
-          <div id={"chat-list-section"} className={"space-y-4"}>
-            <div
-              id={"chat-list-label"}
-              className={"text-xs font-semibold leading-6 text-gray-400"}
-            >
-              Your Chats
-            </div>
-            <nav id={"chat-nav"} className={"flex flex-1 flex-col"}>
-              <ul
-                id={"chat-list"}
-                role={"list"}
-                className={"space-y-5 overflow-x-clip whitespace-nowrap w-full"}
+          {friends.length > 0 ? (
+            <div id={"chat-list-section"} className={"space-y-2"}>
+              <div
+                id={"chat-list-label"}
+                className={"text-xs font-semibold leading-6 text-gray-400"}
               >
-                <li className={"truncate"}>## chats that this user has</li>
-              </ul>
-            </nav>
-          </div>
+                Your Chats
+              </div>
+              <nav id={"chat-nav"} className={"flex flex-1 flex-col"}>
+                <SidebarChatList
+                  id={"chat-list"}
+                  uid={session.user.id}
+                  friends={friends}
+                />
+              </nav>
+            </div>
+          ) : null}
         </div>
         <div id={"user-section"} className={"-mx-6 mt-auto flex items-center"}>
           <div
@@ -121,7 +121,10 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
               "text-sm font-semibold text-gray-900"
             }
           >
-            <div className={"relative h-8 w-8 bg-gray-50"}>
+            <div
+              id={"profile-image"}
+              className={"relative h-8 w-8 bg-gray-50 dark:bg-neutral-800"}
+            >
               <Image
                 src={session.user.image || ""}
                 alt={"user profile picture"}
@@ -131,9 +134,13 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
                 referrerPolicy={"no-referrer"}
               />
             </div>
-            <span className={"sr-only"}>Your profile</span>
-            <div className={"flex flex-col"}>
-              <span aria-hidden={"true"}>{session.user.name}</span>
+            <span id={"sr-text"} className={"sr-only"}>
+              Your profile
+            </span>
+            <div id={"profile-text"} className={"flex flex-col"}>
+              <span aria-hidden={"true"} className={"dark:text-white"}>
+                {session.user.name}
+              </span>
               <span className={"text-xs text-zinc-400"} aria-hidden={"true"}>
                 {session.user.email}
               </span>

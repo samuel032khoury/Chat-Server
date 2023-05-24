@@ -17,33 +17,24 @@ const FriendRequestsSidebarOption: FC<FriendRequestsSidebarOptionProps> = ({
     initialUnseenRequestCount
   );
   return (
-    <Link
-      href={"/dashboard/requests"}
-      className={
-        "group flex items-center p-2 leading-6 gap-x-3 rounded-md " +
-        "font-semibold text-sm text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
-      }
-    >
-      <div
-        className={
-          "flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-white " +
-          "border border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600 " +
-          "text-gray-400 text-[0.625rem] font-medium"
-        }
-      >
-        <User className={"h-4 w-4"} />
-      </div>
-      <p className={"truncate"}>Friends requests</p>
-      {unseenRequestCount > 0 ? (
-        <div
-          className={
-            "flex w-5 h-5 justify-center items-center rounded-full text-xs text-white bg-indigo-600"
-          }
-        >
-          {unseenRequestCount}
-        </div>
-      ) : null}
-    </Link>
+    <li key={"friend-request-sidebar-option"}>
+      <Link href={"/dashboard/requests"} className={"group sidebar-item"}>
+        <span className={"sidebar-icon"}>
+          <User className={"h-4 w-4"} />
+        </span>
+        <span className={"truncate"}>Friends requests</span>
+        {unseenRequestCount > 0 ? (
+          <span
+            className={
+              "dark:bg-amber-300 dark:text-gray-900 " +
+              "flex w-5 h-5 justify-center items-center rounded-full text-xs text-white bg-indigo-600"
+            }
+          >
+            {unseenRequestCount}
+          </span>
+        ) : null}
+      </Link>
+    </li>
   );
 };
 

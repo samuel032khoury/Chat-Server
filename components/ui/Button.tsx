@@ -1,4 +1,4 @@
-import {ButtonHTMLAttributes, FC} from "react";
+import { ButtonHTMLAttributes, FC } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -11,7 +11,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-blue-900 text-white hover:bg-blue-800",
-        ghost: "bg-transparent hover:text-slate-900 hover:bg-slate-200",
+        ghost:
+          "bg-transparent hover:text-slate-900 hover:bg-slate-200 dark:hover:bg-slate-700 dark:hover:text-slate-200",
       },
       size: {
         default: "h-10 py-2 px-4",

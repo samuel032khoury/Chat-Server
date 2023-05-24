@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+.sidebar-item {
+  @apply flex items-center gap-x-3 p-2 leading-6 rounded-xl font-semibold text-sm text-gray-700 dark:text-white;
+}
+
+.sidebar-item:hover {
+  @apply text-indigo-600 bg-gray-50 dark:text-indigo-300 dark:bg-[#2e363a];
+  .sidebar-icon {
+    @apply border-indigo-600 text-indigo-600 dark:border-[#99bcf6] dark:text-[#99bcf6];
+  }
+}
+
+.sidebar-icon {
+  @apply flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border-gray-200 border
+  text-[0.625rem] font-medium text-gray-400;
+}
