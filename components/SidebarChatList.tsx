@@ -42,7 +42,8 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
             <Link
               href={`/dashboard/chat/${chatHrefConstructor(uid, friend.id)}`}
               className={"group  sidebar-item"}
-              onLoad={router.refresh}
+              // onLoad={router.refresh}
+              onClick={router.refresh}
             >
               <span className={"w-full truncate"}>{friend.name}</span>
               <span>

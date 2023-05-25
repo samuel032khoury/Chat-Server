@@ -2,10 +2,11 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
-import { messageHistoryValidator } from "@/lib/validations/message";
+import { Message, messageHistoryValidator } from "@/lib/validations/message";
 import Image from "next/image";
 import Messages from "@/components/Messages";
 import ChatInput from "@/components/ChatInput";
+import toast from "react-hot-toast";
 
 interface PageProps {
   params: {
@@ -15,17 +16,13 @@ interface PageProps {
 
 const getMessageHistory = async (chatId: string) => {
   try {
-    const response: string[] = await db.zrange(
-      `chat:${chatId}:messages`,
-      0,
-      -1
-    );
-    const messageHistory = response
-      .map((entry) => JSON.parse(entry) as Message)
-      .reverse();
+    const messageHistory: Message[] = (
+      await db.zrange(`chat:${chatId}:messages`, 0, -1)
+    ).reverse() as Message[];
     return messageHistoryValidator.parse(messageHistory);
   } catch (error) {
-    notFound();
+    toast.error("Something went wrong. Try again later.");
+    throw new Error(`Internal Server Error - ${(error as Error).message}`);
   }
 };
 const Chat = async ({ params }: PageProps) => {
@@ -64,7 +61,7 @@ const Chat = async ({ params }: PageProps) => {
               src={otherUser.image}
               alt={`${otherUser.name} profile image`}
               fill
-              sizes={"55vw"}
+              sizes={"50vw"}
               referrerPolicy={"no-referrer"}
               className={"rounded-full"}
             />
@@ -87,7 +84,7 @@ const Chat = async ({ params }: PageProps) => {
           </div>
         </div>
       </div>
-      <Messages uid={session.user.id} messageHistory={messageHistory} />
+      <Messages user={user} other={otherUser} messageHistory={messageHistory} />
       <ChatInput chatId={chatId} otherName={otherUser.name} />
     </div>
   );

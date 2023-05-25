@@ -3,16 +3,21 @@
 import { FC, useRef, useState } from "react";
 import { Message } from "@/lib/validations/message";
 import { cn } from "@/lib/utils";
+import { format } from "date-fns";
+import Image from "next/image";
 
 interface MessagesProps {
-  uid: UID;
+  user: DBUser;
+  other: DBUser;
   messageHistory: Message[];
 }
 
-const Messages: FC<MessagesProps> = ({ uid, messageHistory }) => {
+const Messages: FC<MessagesProps> = ({ user, other, messageHistory }) => {
   const [messages, setMessages] = useState<Message[]>(messageHistory);
-
   const scrollDownRef = useRef<HTMLDivElement | null>(null);
+  const formatTimestamp = (timestamp: number) => {
+    return format(timestamp, "HH:mm");
+  };
   return (
     <div
       id={"messages"}
@@ -23,7 +28,7 @@ const Messages: FC<MessagesProps> = ({ uid, messageHistory }) => {
     >
       <div ref={scrollDownRef} />
       {messages.map((message, index) => {
-        const messageSenderIsMe = message.senderId === uid;
+        const messageSenderIsMe = message.senderId === user.id;
         const messageContinued =
           messages[index - 1]?.senderId === messages[index].senderId;
         return (
@@ -61,9 +66,26 @@ const Messages: FC<MessagesProps> = ({ uid, messageHistory }) => {
                     id={`message-${message.id}-ts`}
                     className={"ml-2 text-xs text-gray-400"}
                   >
-                    {message.timestamp}
+                    {formatTimestamp(message.timestamp)}
                   </span>
                 </div>
+              </div>
+              <div
+                id={`message-${message.id}-avatar`}
+                className={cn("relative w-6 h-6", {
+                  "order-2": messageSenderIsMe,
+                  "order-1": !messageSenderIsMe,
+                  invisible: messageContinued,
+                })}
+              >
+                <Image
+                  fill
+                  sizes={"50vw"}
+                  src={messageSenderIsMe ? user.image : other.image}
+                  alt={"message avatar"}
+                  referrerPolicy={"no-referrer"}
+                  className={"rounded-full"}
+                />
               </div>
             </div>
           </div>
