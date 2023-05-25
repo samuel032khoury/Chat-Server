@@ -1,4 +1,4 @@
-import { getServerSession, User } from "next-auth";
+import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
@@ -13,7 +13,7 @@ const Requests = async () => {
   )) as string[];
   const incomingFriendRequests = await Promise.all(
     incomingSenderIds.map(async (senderId) => {
-      const sender = (await db.get(`user:${senderId}`)) as User;
+      const sender = (await db.get(`user:${senderId}`)) as DBUser;
       return {
         senderId,
         senderEmail: sender.email,

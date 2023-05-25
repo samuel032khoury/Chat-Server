@@ -3,6 +3,7 @@
 import { ComponentProps, FC, useEffect, useState } from "react";
 import { User } from "next-auth";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface SidebarChatListProps extends ComponentProps<"ul"> {
   uid: UID;
@@ -38,9 +39,10 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
         ).length;
         return (
           <li key={friend.id} className={"p-2"}>
-            <a
+            <Link
               href={`/dashboard/chat/${chatHrefConstructor(uid, friend.id)}`}
               className={"group  sidebar-item"}
+              onLoad={router.refresh}
             >
               <span className={"w-full truncate"}>{friend.name}</span>
               <span>
@@ -55,7 +57,7 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
                   </div>
                 ) : null}
               </span>
-            </a>
+            </Link>
           </li>
         );
       })}

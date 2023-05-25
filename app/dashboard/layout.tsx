@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { getServerSession, Session, User } from "next-auth";
+import { getServerSession, Session } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -29,7 +29,7 @@ const getFriendsByUserId = async (id: UID) => {
   const friendsIds = (await db.smembers(`user:${id}:friends`)) as string[];
   return await Promise.all(
     friendsIds.map(
-      async (friendId) => (await db.get(`user:${friendId}`)) as User
+      async (friendId) => (await db.get(`user:${friendId}`)) as DBUser
     )
   );
 };
