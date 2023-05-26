@@ -18,6 +18,7 @@ const AddFriendForm: FC<AddFriendFormProps> = ({}) => {
     register,
     handleSubmit,
     setError,
+    clearErrors,
     formState: { errors },
     resetField,
   } = useForm<FormData>({
@@ -68,6 +69,10 @@ const AddFriendForm: FC<AddFriendFormProps> = ({}) => {
             "ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
           }
           placeholder={"john@example.com"}
+          onChange={() => {
+            clearErrors();
+            setStateOK(false);
+          }}
         />
         <Button>Add</Button>
       </div>

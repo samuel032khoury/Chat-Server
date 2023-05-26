@@ -7,7 +7,7 @@ import Link from "next/link";
 
 interface SidebarChatListProps extends ComponentProps<"ul"> {
   uid: UID;
-  friends: User[];
+  friendList: User[];
 }
 
 const chatHrefConstructor = (id1: string, id2: string) => {
@@ -17,7 +17,7 @@ const chatHrefConstructor = (id1: string, id2: string) => {
 
 const SidebarChatList: FC<SidebarChatListProps> = ({
   uid,
-  friends,
+  friendList,
   ...props
 }) => {
   const router = useRouter();
@@ -32,8 +32,13 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
     }
   }, [pathname]);
   return (
-    <ul {...props} role={"list"} className={"space-y-3 w-full"}>
-      {friends.sort().map((friend) => {
+    <ul
+      id={"chat-list"}
+      {...props}
+      role={"list"}
+      className={"space-y-3 w-full"}
+    >
+      {friendList.sort().map((friend) => {
         const unseenMessageCount = unseenMessages.filter(
           (unseenMsg) => unseenMsg.senderId === friend.id
         ).length;
@@ -42,7 +47,6 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
             <Link
               href={`/dashboard/chat/${chatHrefConstructor(uid, friend.id)}`}
               className={"group  sidebar-item"}
-              // onLoad={router.refresh}
               onClick={router.refresh}
             >
               <span className={"w-full truncate"}>{friend.name}</span>

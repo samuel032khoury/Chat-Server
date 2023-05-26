@@ -84,7 +84,12 @@ const Chat = async ({ params }: PageProps) => {
           </div>
         </div>
       </div>
-      <Messages user={user} other={otherUser} messageHistory={messageHistory} />
+      <Messages
+        user={user}
+        other={otherUser}
+        chatId={chatId}
+        messageHistory={messageHistory}
+      />
       <ChatInput chatId={chatId} otherName={otherUser.name} />
     </div>
   );

@@ -52,7 +52,7 @@ const ChatInput: FC<ChatInputProps> = ({ chatId, otherName }) => {
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
-              sendMessage();
+              sendMessage().then();
             }
           }}
           rows={1}

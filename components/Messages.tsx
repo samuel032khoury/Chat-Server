@@ -9,10 +9,16 @@ import Image from "next/image";
 interface MessagesProps {
   user: DBUser;
   other: DBUser;
+  chatId: string;
   messageHistory: Message[];
 }
 
-const Messages: FC<MessagesProps> = ({ user, other, messageHistory }) => {
+const Messages: FC<MessagesProps> = ({
+  user,
+  other,
+  chatId,
+  messageHistory,
+}: MessagesProps) => {
   const [messages, setMessages] = useState<Message[]>(messageHistory);
   const scrollDownRef = useRef<HTMLDivElement | null>(null);
   const formatTimestamp = (timestamp: number) => {

@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
-import FriendRequests from "@/components/FriendRequests";
+import FriendRequestsList from "@/components/FriendRequestsList";
 
 const Requests = async () => {
   const session = await getServerSession(authOptions);
@@ -24,8 +24,8 @@ const Requests = async () => {
     <main className={"pt-8"}>
       <h1 className={"font-bold text-5xl mb-8"}>Friends Requests</h1>
       <div className={"flex flex-col gap-4"}>
-        <FriendRequests
-          sessionId={session.user.id}
+        <FriendRequestsList
+          uid={session.user.id}
           incomingFriendRequests={incomingFriendRequests}
         />
       </div>

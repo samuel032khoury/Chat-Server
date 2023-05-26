@@ -3,6 +3,8 @@ import { db } from "@/lib/db";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { z } from "zod";
+import { pusherServer } from "@/lib/pusher";
+import { toPusherKey } from "@/lib/utils";
 
 export async function POST(req: Request) {
   try {
@@ -42,8 +44,18 @@ export async function POST(req: Request) {
       });
     }
     // valid request, send friend request
-    await db.sadd(`user:${uid}:incoming_friend_requests`, sessionUID);
-    await db.sadd(`user:${sessionUID}:friend_requests_history`, uid);
+    await Promise.all([
+      pusherServer.trigger(
+        toPusherKey(`user:${uid}:incoming_friend_requests`),
+        "incoming_friend_requests",
+        {
+          senderId: sessionUID,
+          senderEmail: session.user.email,
+        }
+      ),
+      db.sadd(`user:${uid}:incoming_friend_requests`, sessionUID),
+      db.sadd(`user:${sessionUID}:friend_requests_history`, uid),
+    ]);
     return new Response("OK");
   } catch (error) {
     if (error instanceof z.ZodError) {

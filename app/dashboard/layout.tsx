@@ -6,9 +6,9 @@ import Link from "next/link";
 import { Icon, Icons } from "@/components/Icons";
 import Image from "next/image";
 import SignOutButton from "@/components/SignOutButton";
-import FriendRequestsSidebarOption from "@/components/FriendRequestsSidebarOption";
+import SidebarFriendRequestsOption from "@/components/SidebarFriendRequestsOption";
 import { db } from "@/lib/db";
-import SidebarChatList from "@/components/SidebarChatList";
+import SidebarChatListSection from "@/components/SidebarChatListSection";
 
 interface LayoutProps {
   children: ReactNode;
@@ -75,8 +75,8 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
                 role={"list"}
                 className={"-px-2 space-y-2"}
               >
-                <FriendRequestsSidebarOption
-                  sessionId={session.user.id}
+                <SidebarFriendRequestsOption
+                  uid={session.user.id}
                   initialUnseenRequestCount={unseenRequestCount}
                 />
                 {staticSidebarOptions.map((option) => {
@@ -95,23 +95,7 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
               </ul>
             </nav>
           </div>
-          {friends.length > 0 ? (
-            <div id={"chat-list-section"} className={"space-y-2"}>
-              <div
-                id={"chat-list-label"}
-                className={"text-xs font-semibold leading-6 text-gray-400"}
-              >
-                Your Chats
-              </div>
-              <nav id={"chat-nav"} className={"flex flex-1 flex-col"}>
-                <SidebarChatList
-                  id={"chat-list"}
-                  uid={session.user.id}
-                  friends={friends}
-                />
-              </nav>
-            </div>
-          ) : null}
+          <SidebarChatListSection uid={session.user.id} friends={friends} />
         </div>
         <div id={"user-section"} className={"-mx-6 mt-auto flex items-center"}>
           <div
