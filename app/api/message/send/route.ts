@@ -3,6 +3,8 @@ import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { nanoid } from "nanoid";
 import { Message, messageValidator } from "@/lib/validations/message";
+import { pusherServer } from "@/lib/pusher";
+import { toPusherKey } from "@/lib/utils";
 
 export const POST = async (req: Request) => {
   try {
@@ -32,11 +34,20 @@ export const POST = async (req: Request) => {
       timestamp,
     };
     const message = messageValidator.parse(messageData);
-    // all valid, send the message
-    await db.zadd(`chat:${chatId}:messages`, {
-      score: timestamp,
-      member: JSON.stringify(message),
-    });
+    //all valid, proceed
+    await Promise.all([
+      // notify clients
+      pusherServer.trigger(
+        toPusherKey(`chat:${chatId}`),
+        "incoming-message",
+        message
+      ),
+      // send the message
+      db.zadd(`chat:${chatId}:messages`, {
+        score: timestamp,
+        member: JSON.stringify(message),
+      }),
+    ]);
     return new Response("OK");
   } catch (error) {
     if (error instanceof Error) {
