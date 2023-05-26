@@ -62,6 +62,11 @@ const AddFriendForm: FC<AddFriendFormProps> = ({}) => {
       <div className={"mt-2 flex gap-4"}>
         <input
           {...register("email")}
+          onChange={async (e) => {
+            await register("email").onChange(e);
+            clearErrors();
+            setStateOK(false);
+          }}
           type={"text"}
           className={
             "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm " +
@@ -69,10 +74,6 @@ const AddFriendForm: FC<AddFriendFormProps> = ({}) => {
             "ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
           }
           placeholder={"john@example.com"}
-          onChange={() => {
-            clearErrors();
-            setStateOK(false);
-          }}
         />
         <Button>Add</Button>
       </div>
