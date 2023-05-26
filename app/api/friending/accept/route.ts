@@ -37,7 +37,10 @@ export async function POST(req: Request) {
       ),
       pusherServer.trigger(toPusherKey(`user:${uid}:friends`), "friend_added", {
         newFriend: currUser,
-        resolvable: false,
+        resolvable: await db.sismember(
+          `user:${uid}:incoming_friend_requests`,
+          session.user.id
+        ),
       }),
       db.sadd(`user:${session.user.id}:friends`, uid),
       db.sadd(`user:${uid}:friends`, session.user.id),
