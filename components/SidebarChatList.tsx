@@ -4,6 +4,8 @@ import { ComponentProps, FC, useEffect, useState } from "react";
 import { User } from "next-auth";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import { pusherClient } from "@/lib/pusher";
+import { toPusherKey } from "@/lib/utils";
 
 interface SidebarChatListProps extends ComponentProps<"ul"> {
   uid: UID;
@@ -24,6 +26,17 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
   const pathname = usePathname();
 
   const [unseenMessages, setUnseenMessages] = useState<Message[]>([]);
+  useEffect(() => {
+    pusherClient.subscribe(toPusherKey(`user:${uid}:chats`));
+    const newMessageHandler = () => {
+      //TODO
+    };
+    pusherClient.bind("user-new-message", newMessageHandler);
+    return () => {
+      pusherClient.unsubscribe(toPusherKey(`user:${uid}:chats`));
+      pusherClient.unbind("user-new-message", newMessageHandler);
+    };
+  }, [uid]);
   useEffect(() => {
     if (pathname?.includes("chat")) {
       setUnseenMessages((currentState) =>

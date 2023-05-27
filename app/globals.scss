@@ -20,6 +20,12 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+@layer base {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
 .sidebar-item {
   @apply flex items-center gap-x-3 p-2 leading-6 rounded-xl font-semibold text-sm text-gray-700 dark:text-white;
 }

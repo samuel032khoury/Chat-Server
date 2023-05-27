@@ -45,7 +45,7 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
       <div
         id={"sidebar"}
         className={
-          "flex flex-1 flex-col h-full max-w-[22rem] grow gap-y-5 overflow-y-auto overflow-x-clip " +
+          "flex flex-1 flex-col h-full max-w-[22rem] min-w-[15rem] grow gap-y-5 overflow-y-auto overflow-x-clip " +
           "border-r border-gray-200 bg-white px-6 dark:bg-[#1b2023] dark:border-neutral-600"
         }
       >
@@ -133,7 +133,9 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
           <SignOutButton className={"h-full aspect-square"} />
         </div>
       </div>
-      {children}
+      <aside className={"container max-h-screen py-16 md:py-12 w-3/4"}>
+        {children}
+      </aside>
     </div>
   );
 };
