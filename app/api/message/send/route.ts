@@ -12,7 +12,6 @@ export const POST = async (req: Request) => {
     const session = await getServerSession(authOptions);
 
     if (!session) {
-      console.log(30);
       return new Response("Unauthorized", { status: 401 });
     }
 
@@ -38,8 +37,14 @@ export const POST = async (req: Request) => {
     await Promise.all([
       // notify clients
       pusherServer.trigger(
+        toPusherKey(`user:${otherId}:chats`),
+        "user-new-message",
+        { ...message, senderImage: sender.image, senderName: sender.name }
+      ),
+      // update chat window
+      pusherServer.trigger(
         toPusherKey(`chat:${chatId}`),
-        "incoming-message",
+        "chat-new-message",
         message
       ),
       // send the message

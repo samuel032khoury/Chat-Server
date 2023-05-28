@@ -31,10 +31,10 @@ const Messages: FC<MessagesProps> = ({
     const messageHandler = (message: Message) => {
       setMessages((currentState) => [message, ...currentState]);
     };
-    pusherClient.bind("incoming-message", messageHandler);
+    pusherClient.bind("chat-new-message", messageHandler);
     return () => {
-      pusherClient.unsubscribe(toPusherKey(`chat:${chatId}`));
-      pusherClient.unbind("incoming-message", messageHandler);
+        pusherClient.unsubscribe(toPusherKey(`chat:${chatId}`));
+        pusherClient.unbind("chat-new-message", messageHandler);
     };
   }, [chatId]);
   return (

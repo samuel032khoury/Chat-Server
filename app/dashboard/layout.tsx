@@ -3,7 +3,7 @@ import { getServerSession, Session } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Icon, Icons } from "@/components/Icons";
+import { Icon, Icons } from "@/components/ui/Icons";
 import Image from "next/image";
 import SignOutButton from "@/components/SignOutButton";
 import SidebarFriendRequestsOption from "@/components/SidebarFriendRequestsOption";

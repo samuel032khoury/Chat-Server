@@ -6,13 +6,20 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { pusherClient } from "@/lib/pusher";
 import { toPusherKey } from "@/lib/utils";
+import toast from "react-hot-toast";
+import NewMessageBanner from "@/components/NewMessageBanner";
 
 interface SidebarChatListProps extends ComponentProps<"ul"> {
   uid: UID;
   friendList: User[];
 }
 
-const chatHrefConstructor = (id1: string, id2: string) => {
+export interface BannerMessage extends Message {
+  senderImage: string;
+  senderName: string;
+}
+
+export const chatHrefConstructor = (id1: string, id2: string) => {
   const sortedIds = [id1, id2].sort();
   return `${sortedIds[0]}--${sortedIds[1]}`;
 };
@@ -28,15 +35,24 @@ const SidebarChatList: FC<SidebarChatListProps> = ({
   const [unseenMessages, setUnseenMessages] = useState<Message[]>([]);
   useEffect(() => {
     pusherClient.subscribe(toPusherKey(`user:${uid}:chats`));
-    const newMessageHandler = () => {
-      //TODO
+    const bannerMessageHandler = (bannerMessage: BannerMessage) => {
+      const shouldBanner =
+        pathname !==
+        `/dashboard/chat/${chatHrefConstructor(uid, bannerMessage.senderId)}`;
+      if (!shouldBanner) return;
+
+      toast.custom((t) => (
+        <NewMessageBanner t={t} uid={uid} message={bannerMessage} />
+      ));
+
+      setUnseenMessages((currentState) => [...currentState, bannerMessage]);
     };
-    pusherClient.bind("user-new-message", newMessageHandler);
+    pusherClient.bind("user-new-message", bannerMessageHandler);
     return () => {
       pusherClient.unsubscribe(toPusherKey(`user:${uid}:chats`));
-      pusherClient.unbind("user-new-message", newMessageHandler);
+      pusherClient.unbind("user-new-message", bannerMessageHandler);
     };
-  }, [uid]);
+  }, [pathname, uid]);
   useEffect(() => {
     if (pathname?.includes("chat")) {
       setUnseenMessages((currentState) =>
