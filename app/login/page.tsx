@@ -4,10 +4,9 @@ import { FC, useState } from "react";
 import Button from "@/components/ui/Button";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
+import { Icons } from "@/components/ui/Icons";
 
-interface PageProps {}
-
-const Login: FC<PageProps> = ({}) => {
+const Login: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function loginWithGoogle() {
@@ -33,8 +32,10 @@ const Login: FC<PageProps> = ({}) => {
           "w-full flex flex-col items-center max-w-md space-y-8 dark:bg-black"
         }
       >
-        <div className={"flex flex-col items-center gap-8"}>
-          logo
+        <div className={"flex flex-col items-center gap-8 shrink-0"}>
+          <Icons.Logo
+            className={"h-8 w-auto text-indigo-600 dark:text-indigo-50"}
+          />
           <h2
             className={
               "mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50"

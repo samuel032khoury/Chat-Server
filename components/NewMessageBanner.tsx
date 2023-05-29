@@ -73,8 +73,9 @@ const NewMessageBanner: FC<NewMessageBannerProps> = ({ t, uid, message }) => {
         <button
           onClick={() => toast.dismiss(t.id)}
           className={
-            "w-full rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm " +
-            "font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            "w-full rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium " +
+            "text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 " +
+            "dark:text-white dark:hover:text-gray-200"
           }
         >
           Close

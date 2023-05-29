@@ -1,8 +1,6 @@
 import { FC } from "react";
 
-interface PageProps {}
-
-const Dashboard: FC<PageProps> = ({}) => {
+const Dashboard: FC = () => {
   return (
     <div className={"items-center justify-center"}>
       <h1> DASHBOARD</h1>

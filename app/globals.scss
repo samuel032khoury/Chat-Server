@@ -58,6 +58,19 @@ body {
   background-color: #edf2f7;
   background-color: rgba(237, 242, 247, var(--bg-opacity));
 }
+@layer utilities {
+  .scrollbar-track-gray::-webkit-scrollbar-track {
+    --bg-opacity: 1;
+    background-color: #111827;
+    background-color: rgba(17, 24, 39, var(--bg-opacity));
+  }
+
+  .scrollbar-thumb-yellow::-webkit-scrollbar-thumb {
+    --bg-opacity: 0.6;
+    background-color: #ca8f11;
+    background-color: rgba(202, 143, 17, var(--bg-opacity));
+  }
+}
 
 .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
   border-radius: 0.25rem;
