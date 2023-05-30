@@ -9,6 +9,7 @@ import SignOutButton from "@/components/SignOutButton";
 import SidebarFriendRequestsOption from "@/components/SidebarFriendRequestsOption";
 import { db } from "@/lib/db";
 import SidebarChatListSection from "@/components/SidebarChatListSection";
+import { getFriendsByUserId } from "@/app/dashboard/helpers";
 
 interface LayoutProps {
   children: ReactNode;
@@ -25,14 +26,6 @@ const staticSidebarOptions: SidebarOption[] = [
   { id: 1, name: "Add friends", href: "/dashboard/add", icon: "UserPlus" },
 ];
 
-const getFriendsByUserId = async (id: UID) => {
-  const friendsIds = (await db.smembers(`user:${id}:friends`)) as string[];
-  return await Promise.all(
-    friendsIds.map(
-      async (friendId) => (await db.get(`user:${friendId}`)) as DBUser
-    )
-  );
-};
 const DashboardLayout = async ({ children }: LayoutProps) => {
   const session: Session | null = await getServerSession(authOptions);
   if (!session) notFound();
@@ -106,7 +99,7 @@ const DashboardLayout = async ({ children }: LayoutProps) => {
             }
           >
             <div
-              id={"profile-image"}
+              id={"profile-image-container"}
               className={"relative h-8 w-8 bg-gray-50 dark:bg-neutral-800"}
             >
               <Image

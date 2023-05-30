@@ -35,6 +35,7 @@ const Chat = async ({ params }: PageProps) => {
   if (user.id !== userId1 && user.id !== userId2) notFound();
   const otherId = user.id === userId1 ? userId2 : userId1;
   const otherUser = (await db.get(`user:${otherId}`)) as DBUser;
+  if (!(await db.sismember(`user:${user.id}:friends`, otherId))) notFound();
   const messageHistory = await getMessageHistory(chatId);
   return (
     <div

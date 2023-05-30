@@ -1,11 +1,8 @@
 import { FC } from "react";
-import { cn } from "@/lib/utils";
+import { chatHrefConstructor, cn } from "@/lib/utils";
 import toast, { Toast } from "react-hot-toast";
 import Link from "next/link";
-import {
-  BannerMessage,
-  chatHrefConstructor,
-} from "@/components/SidebarChatList";
+import { BannerMessage } from "@/components/SidebarChatList";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 

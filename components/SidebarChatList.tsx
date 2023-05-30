@@ -5,7 +5,7 @@ import { User } from "next-auth";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { pusherClient } from "@/lib/pusher";
-import { toPusherKey } from "@/lib/utils";
+import { chatHrefConstructor, toPusherKey } from "@/lib/utils";
 import toast from "react-hot-toast";
 import NewMessageBanner from "@/components/NewMessageBanner";
 
@@ -18,11 +18,6 @@ export interface BannerMessage extends Message {
   senderImage: string;
   senderName: string;
 }
-
-export const chatHrefConstructor = (id1: string, id2: string) => {
-  const sortedIds = [id1, id2].sort();
-  return `${sortedIds[0]}--${sortedIds[1]}`;
-};
 
 const SidebarChatList: FC<SidebarChatListProps> = ({
   uid,

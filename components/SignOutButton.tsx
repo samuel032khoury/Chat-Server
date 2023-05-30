@@ -13,6 +13,7 @@ const SignOutButton: FC<SignOutButtonProps> = ({ ...props }) => {
   return (
     <Button
       {...props}
+      title={"Sign Out"}
       variant={"ghost"}
       onClick={async () => {
         setIsSigningOut(true);
