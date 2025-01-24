@@ -33,6 +33,11 @@ export const POST = async (req: Request) => {
       timestamp,
     };
     const message = messageValidator.parse(messageData);
+    // send the message
+    await db.zadd(`chat:${chatId}:messages`, {
+      score: timestamp,
+      member: JSON.stringify(message),
+    });
     //all valid, proceed
     await Promise.all([
       // notify clients
@@ -47,11 +52,6 @@ export const POST = async (req: Request) => {
         "chat-new-message",
         message
       ),
-      // send the message
-      db.zadd(`chat:${chatId}:messages`, {
-        score: timestamp,
-        member: JSON.stringify(message),
-      }),
     ]);
     return new Response("OK");
   } catch (error) {

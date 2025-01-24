@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently \"next dev\" \"sleep .5 && open http://localhost:3000\"",
     "build": "next build",
-    "start": "next start",
+    "start": "next build && concurrently \"next start -p 8080\" \"sleep .5 && open http://localhost:8080\"",
     "lint": "next lint"
   },
   "dependencies": {

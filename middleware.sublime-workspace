@@ -1,0 +1,826 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"qui",
+				"quickSort"
+			],
+			[
+				"quick",
+				"quickSortHelper"
+			],
+			[
+				"ld",
+				"_ld"
+			],
+			[
+				"cla",
+				"classes"
+			],
+			[
+				"ei",
+				"eigenvalues"
+			],
+			[
+				"dat",
+				"data_train_ldaed"
+			],
+			[
+				"eig",
+				"eigenvalues"
+			],
+			[
+				"tes",
+				"test_data_scaled"
+			],
+			[
+				"lab",
+				"labels"
+			],
+			[
+				"dt",
+				"data_scaled"
+			],
+			[
+				"test",
+				"test_labels"
+			],
+			[
+				"sam",
+				"sampels_y"
+			],
+			[
+				"fi",
+				"fit"
+			],
+			[
+				"la",
+				"labels"
+			],
+			[
+				"km",
+				"kmeans_labels"
+			],
+			[
+				"co",
+				"col_marginal"
+			],
+			[
+				"ro",
+				"row_marginal"
+			],
+			[
+				"h",
+				"h_labels"
+			],
+			[
+				"tru",
+				"true_prob"
+			],
+			[
+				"MIS",
+				"MI_score"
+			],
+			[
+				"misc",
+				"mi_score"
+			],
+			[
+				"labe",
+				"labels"
+			],
+			[
+				"k",
+				"kmeans_labels"
+			],
+			[
+				"hcls",
+				"h_cluster"
+			],
+			[
+				"cen",
+				"recent_centroids_hist"
+			],
+			[
+				"re",
+				"recent_centroids_hist"
+			],
+			[
+				"cl",
+				"cluster"
+			],
+			[
+				"po",
+				"point"
+			],
+			[
+				"c",
+				"cluster"
+			],
+			[
+				"crd",
+				"corr_reduced_data"
+			],
+			[
+				"cor",
+				"corr_matrix"
+			],
+			[
+				"n",
+				"n_components"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"gdm",
+				"gd_model_pred"
+			],
+			[
+				"fea",
+				"feature_names"
+			],
+			[
+				"testda",
+				"test_data_reduced"
+			],
+			[
+				"fe",
+				"feature_num"
+			],
+			[
+				"tra",
+				"_trans_mat"
+			],
+			[
+				"das",
+				"data_scaled_reduced"
+			],
+			[
+				"las",
+				"lasso_model"
+			],
+			[
+				"lass",
+				"lasso_pred"
+			],
+			[
+				"l",
+				"lasso_model"
+			],
+			[
+				"te",
+				"test_data_scaled"
+			],
+			[
+				"pre",
+				"predict"
+			],
+			[
+				"br",
+				"branches"
+			],
+			[
+				"tre",
+				"tree_depth"
+			],
+			[
+				"subt",
+				"sub_targer"
+			],
+			[
+				"ou",
+				"output"
+			],
+			[
+				"matc",
+				"matching_indicies"
+			],
+			[
+				"ma",
+				"matching_indicies"
+			],
+			[
+				"def",
+				"defaultdict"
+			],
+			[
+				"se",
+				"second_col_items"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"featurs",
+				"features"
+			],
+			[
+				"feas",
+				"features"
+			],
+			[
+				"s",
+				"split_feature"
+			],
+			[
+				"p",
+				"x_prob"
+			],
+			[
+				"x",
+				"x_total"
+			],
+			[
+				"y",
+				"y_given_x"
+			],
+			[
+				"lb",
+				"label_stats"
+			],
+			[
+				"get",
+				"get_mutual_info"
+			],
+			[
+				"an",
+				"animals"
+			],
+			[
+				"samp",
+				"sample_points"
+			],
+			[
+				"reje",
+				"rejection_samples"
+			],
+			[
+				"ex",
+				"exponential"
+			],
+			[
+				"addR",
+				"addRoutes"
+			],
+			[
+				"funct",
+				"function_terms"
+			],
+			[
+				"pr",
+				"param_range"
+			],
+			[
+				"pa",
+				"param_list"
+			],
+			[
+				"mode",
+				"model"
+			],
+			[
+				"trai",
+				"train_gd_lasso"
+			],
+			[
+				"clas",
+				"class\tNew Class"
+			],
+			[
+				"Xtra",
+				"X_train_scaled"
+			],
+			[
+				"li",
+				"list1"
+			],
+			[
+				"ag",
+				"age_min"
+			],
+			[
+				"sa",
+				"sat_std"
+			],
+			[
+				"sat",
+				"sat_std"
+			],
+			[
+				"y_va",
+				"y_validation"
+			],
+			[
+				"y_vali",
+				"y_validation_pred"
+			],
+			[
+				"X_va",
+				"X_validation_scaled"
+			],
+			[
+				"X_trs",
+				"X_train_std"
+			],
+			[
+				"plfes",
+				"poly_features"
+			],
+			[
+				"cur",
+				"curr_term_2"
+			],
+			[
+				"requ",
+				"requires_grad"
+			],
+			[
+				"S",
+				"SquareConfig"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"tog",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"gene",
+				"Terminus Utilities: Generate User Theme"
+			],
+			[
+				"Terminus",
+				"Preferences: Terminus Key Bindings"
+			],
+			[
+				"ge",
+				"Terminus Utilities: Generate User Theme"
+			],
+			[
+				"togg",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"selec",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"TeUtSeTh",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"toggle",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"Terminus Ut",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"tuse",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"TUST",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"open",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"Terminus Utilities: Select",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"sett",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"settings",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"select",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"terminalView",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"termina",
+				"Preferences: Terminality Settings – Default"
+			],
+			[
+				"Terminus Sett",
+				"Preferences: Terminus Settings"
+			],
+			[
+				"Terminus Utilities: Select Theme",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"sele",
+				"UI: Select Theme"
+			],
+			[
+				"Terminus sele",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"selectth",
+				"UI: Select Theme"
+			],
+			[
+				"terminus",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"theme",
+				"Terminus Utilities: Select Theme"
+			],
+			[
+				"close",
+				"Terminus: Close"
+			],
+			[
+				"termi",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"snipp",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"typ",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"rm p",
+				"Package Control: Remove Package"
+			],
+			[
+				"js sni",
+				"Snippet: JS - Do While loop"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"unin",
+				"Permute Lines: Unique"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"acy",
+				"ayu: Activate theme"
+			],
+			[
+				"pacak",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/Web/web-notes/requirements.txt",
+		"/Users/samuel/Desktop/Untitled2.py",
+		"/Users/samuel/Desktop/Untitled.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/.archived/Northeastern/5-Terms/22FL/CS3700/[HW] Project/Project4/3700recv.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/.archived/Northeastern/5-Terms/23FL/DS4400/HW4/Q3.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/Leetcode/max_after_split.py",
+		"/Users/samuel/Desktop/quicksort.py",
+		"/Users/samuel/Desktop/untitled2.py",
+		"/Users/samuel/Desktop/chatserver/.env.local",
+		"/Users/samuel/Desktop/chatserver-main/.env.local",
+		"/Users/samuel/Desktop/chatserver-main/lib/auth.ts",
+		"/Users/samuel/Desktop/chatserver-main/app/api/auth/[...nextauth]/route.ts",
+		"/Users/samuel/Desktop/chatserver-main/app/dashboard/helpers.ts",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/Web/chatserver/.gitignore",
+		"/Users/samuel/Downloads/Saltburn.English-WWW.MY-SUBS.CO.srt",
+		"/Users/samuel/Desktop/Counter.java",
+		"/Users/samuel/Desktop/Untitled.java",
+		"/Users/samuel/.config/raycast/scripts/newfile",
+		"/Users/samuel/.config/raycast/scripts/java.sh",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Personal/Security/iCloud.txt",
+		"/Users/samuel/.config/clash/Proxy.yaml",
+		"/Users/samuel/.config/clash/35Proxy_copy.yaml",
+		"/Users/samuel/.AnyBar/anybar",
+		"/Users/samuel/.config/raycast/scripts/clean-up-login-items.sh",
+		"/Users/samuel/Library/Application Support/Surge/Profiles/subscribe.conf",
+		"/Users/samuel/.config/clash/35Proxy.yaml",
+		"/Users/samuel/.config/raycast/scripts/keka.sh",
+		"/Users/samuel/.zshrc",
+		"/Users/samuel/.config/clash/Country.mmdb",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/Swift/BasicSwiftUI/BasicSwiftUI/SelectorsView.swift",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/Swift/SwiftUI-Bootcamp/SwiftfulThinkingBootcamp/PopoverBootcamp.swift",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/Swift/SwiftUI-Bootcamp/SwiftfulThinkingBootcamp/ActionsheetBootcamp.swift",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/Swift/SwiftUI-Bootcamp/SwiftfulThinkingBootcamp/AsyncImageBoocamp.swift",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/Swift/SwiftUI-Bootcamp/SwiftfulThinkingBootcamp/ListBootcamp.swift",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/Swift/SwiftUI-Bootcamp/SwiftfulThinkingBootcamp/BackgroundAndOverlayBootcamp.swift",
+		"/Users/samuel/Desktop/UCSD-Prof.txt",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Personal/GradSchool App/Reference.txt",
+		"/Users/samuel/.lesshst",
+		"/Users/samuel/.python_history",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/22SP/CS4100/HW/TermProject/trainModel.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/22SP/CS4100/HW/TermProject/runModel.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Final Prep/Coding/Q5.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Final Prep/Coding/Q4.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Final Prep/Coding/Q3.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Final Prep/Coding/Q2.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Final Prep/Coding/Q1.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Final Prep/Coding/test.py",
+		"/Users/samuel/Desktop/test.py",
+		"/Users/samuel/Desktop/untitled.py",
+		"/Users/samuel/Desktop/Coding_Final/Question 4/Q4.py",
+		"/Users/samuel/Desktop/Coding_Final/Question 3/Q3.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture10/ICA 10/ICA 10.py",
+		"/Users/samuel/Library/Application Support/CleanShot/media/media_nekcUgVb4u/Sublime Text@December'07-14'49'46.png",
+		"/Users/samuel/Desktop/Untitled.ts",
+		"/Users/samuel/Desktop/Untitled.txt",
+		"/Users/samuel/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/7FECFD78-5287-4B9A-8431-36A31152D26E/3700kvstore.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Personal/GradSchool App/School List.txt",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture16/ICA 16.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture15/ICA.py",
+		"/Users/samuel/Desktop/ICA.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW4/Q4.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW4/Q3.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW5/HW5.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW5/Q1.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW5/P5.py",
+		"/Users/samuel/Desktop/Q2.py",
+		"/Users/samuel/Desktop/P5.py",
+		"/Users/samuel/Desktop/sys2.py",
+		"/Users/samuel/Desktop/Q1.py",
+		"/Users/samuel/Desktop/ew.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW3/easier_data.csv",
+		"/Users/samuel/Downloads/CS4400 HW5/main.tex",
+		"/Users/samuel/Desktop/try.swift",
+		"/Users/samuel/Library/Application Support/Sublime Text/Packages/User/try.swift",
+		"/Users/samuel/Library/Application Support/Sublime Text/Packages/User/TypeScript.sublime-build",
+		"/Users/samuel/Library/Application Support/Sublime Text/Packages/User/Pyenv.sublime-build",
+		"/Users/samuel/Library/Application Support/Sublime Text/Packages/User/Swift.sublime-build",
+		"/Users/samuel/Desktop/Untitled.js",
+		"/Users/samuel/Desktop/Revcipes/Revcipe.xcodeproj/project.pbxproj",
+		"/Users/samuel/Desktop/ld.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture7/ICA/ICA7.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Exam Prep/P5.py",
+		"/Users/samuel/Downloads/HW3.ipynb",
+		"/Users/samuel/Downloads/MLutils.py",
+		"/Users/samuel/Desktop/ICA11.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Exam Prep/P1.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Exam Prep/P2.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Exam Prep/P3.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Exam Prep/P4.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture9/ICA/ICA9.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture6/ICA/ICA6.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture5/ICA/linear.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture10/ICA/ICA10.py",
+		"/Users/samuel/Desktop/test2.py",
+		"/Users/samuel/Desktop/U.py",
+		"/Users/samuel/Desktop/unique_path_II.py",
+		"/Users/samuel/Desktop/test3.py",
+		"/Users/samuel/Desktop/Revcipe/Revcipe.xcodeproj/project.xcworkspace/xcuserdata/samuel.xcuserdatad/UserInterfaceState.xcuserstate",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Code/chatserver/.gitignore",
+		"/Users/samuel/Library/Application Support/CleanShot/media/media_PJC3jFGKsl/Preview@October'07-02'37'28.png",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture8/ICA/ICA8.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture9/ICA9.py",
+		"/Users/samuel/Downloads/CS4400 HW4/main.tex",
+		"/Users/samuel/Downloads/ICA-4.py",
+		"/Users/samuel/Desktop/ICA Lecture8/ICA.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW3/Q1-polynomial.py",
+		"/Users/samuel/Desktop/ICA Lecture8/Untitled.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture3/Derivitive Code/#15.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW3/Q1-linear.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW3/Q6.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture7/ICA/ICA.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture7/ICA/polynomial.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture7/ICA/linear.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture6/ICA/ICA.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture5/ICA/polynomial.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture5/ICA/polynomial-output.txt",
+		"/Users/samuel/Downloads/CS4400 HW3/main.tex",
+		"/Users/samuel/Desktop/ICA/polynomial.py",
+		"/Users/samuel/Desktop/ICA/title.py",
+		"/Users/samuel/Desktop/ICA/linear_gradient_descent.py",
+		"/Users/samuel/Desktop/ICA/linear.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture5/Lecture5 Material/Tennis.csv",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW2/Q4.py",
+		"/Users/samuel/Desktop/try.py",
+		"/Users/samuel/Desktop/ICA",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/Lecture5/Lecture5 Material/categorical_to_numeric.py",
+		"/Users/samuel/Library/Mobile Documents/com~apple~CloudDocs/Northeastern/5-Arcived Terms/23FL/DS4400/HW2/Q5.py",
+		"/Users/samuel/Desktop/Derivitive/Derivative.py"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 134.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "middleware.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 349.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 580.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chat Server - Real-Time Online Chat
 
-## Getting Started
+## Getting Started ▶️
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Node.js (v18 or higher)
+- Next.js (v13)
+- Upstash account for database setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Steps
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone this repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   git clone https://github.com/samuel032khoury/chatserver
+   cd chatserver
+   ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Configure environment variables:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   - Add the following variables to `.env.local`:
 
-## Deploy on Vercel
+     ```env
+     NEXTAUTH_SECRET=<your_nextauth_secret>
+     
+     UPSTASH_REDIS_REST_URL=<your_upstash_redis_rest_url>
+     UPSTASH_REDIS_REST_TOKEN=<your_upstash_redis_rest_token>
+     
+     GOOGLE_CLIENT_ID=<your_google_client_id>
+     GOOGLE_CLIENT_SECRET=<your_google_client_secret>
+     
+     PUSHER_APP_ID=<your_pusher_app_id>
+     NEXT_PUBLIC_PUSHER_APP_KEY=<your_next_public_pusher_app_key>
+     PUSHER_APP_SECRET=<your_pusher_app_secret>
+     ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+     - Generate NEXTAUTH_SECRET by running `npx auth secret` command.
+     - Get Upstash API [here](https://upstash.com).
+     - Set up Google OAuth Service at [Google Cloud Platform](https://console.cloud.google.com) > API & Services > Credentials
+       - Make sure to add `http://<your_project_domain>` to the field *Authorized JavaScript origins*.
+       - Make sure to add `http://<your_project_domain>/api/auth/callback/google` to the field *Authorized redirect URIs*.
+     - Set up Pusher Service [here](https://pusher.com).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be accessible at `http://localhost:3000`.

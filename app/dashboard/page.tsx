@@ -7,6 +7,7 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { chatHrefConstructor } from "@/lib/utils";
+import {cookies} from "next/headers";
 
 const Dashboard = async () => {
   const session = await getServerSession(authOptions);
