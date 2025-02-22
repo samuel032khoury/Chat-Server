@@ -71,10 +71,10 @@ const Dashboard = async () => {
                 <h4 className={"text-lg font-semibold"}>{friend.name}</h4>
                 <p className="mt-1 max-w-md">
                   <span className="text-zinc-400">
-                    {friend.lastMessage.senderId === session.user.id
+                    {friend.lastMessage?.senderId === session.user.id
                       ? "You: "
                       : ""}
-                    {friend.lastMessage.text}
+                    {friend.lastMessage?.text}
                   </span>
                 </p>
               </div>
